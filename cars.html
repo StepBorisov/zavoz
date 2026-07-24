@@ -23,8 +23,8 @@ html{ color-scheme: light; overflow-x:hidden; }
   --ink:     #17181A;
   --gray:    #6E7178;
   --line:    #E2E2DC;
-  --accent:  #8B1A1A;
-  --accent-dark: #6B1414;
+  --accent:  #E31E24;
+  --accent-dark: #B4141A;
 
   --f-display: 'Manrope', sans-serif;
   --f-body:    'Inter', sans-serif;
@@ -92,6 +92,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .btn--primary:disabled{ background:var(--line); color:var(--gray); cursor:not-allowed; }
 .btn--ghost{ background:transparent; color:var(--ink); border-color:var(--line); }
 .btn--ghost:hover{ border-color:var(--ink); }
+.btn--redfill{ background:var(--accent); color:#fff; }
+.btn--redfill:hover{ background:var(--accent-dark); }
 .btn--accent{ background:transparent; color:var(--accent-dark); border-color:var(--accent); }
 .btn--accent:hover{ background:var(--accent); color:#fff; }
 .btn--full{ width:100%; }
@@ -205,7 +207,7 @@ section + section{ border-top:1px solid var(--line); }
    Directions
    ========================================================================== */
 .directions__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-16); }
-.direction-card{ padding:var(--s-24); }
+.direction-card{ padding:var(--s-24); border-color:var(--accent); }
 .direction-card__code{ font-family:var(--f-mono); font-size:11px; color:var(--accent-dark); }
 .direction-card h3{ margin-top:var(--s-8); }
 .direction-card p{ margin-top:8px; font-size:14px; }
@@ -401,7 +403,7 @@ section + section{ border-top:1px solid var(--line); }
   <section style="padding-bottom:0;">
     <div class="container">
       <span class="label">Каталог</span>
-      <h1 style="margin-top:16px; font-size:40px;">Автомобили из Азии</h1>
+      <h1 style="margin-top:16px; color:var(--accent);">Автомобили из Азии</h1>
       <p style="margin-top:16px; max-width:60ch;">Примеры для ориентира — итоговый автомобиль подбирается под ваш запрос, бюджет и сроки. Не нашли похожего — оставьте заявку, и мы найдём вариант под вас.</p>
     </div>
   </section>
@@ -481,13 +483,13 @@ section + section{ border-top:1px solid var(--line); }
         </div>
         <div class="field field--action">
           <label>&nbsp;</label>
-          <button type="button" id="applyFiltersBtn" class="btn btn--primary">Найти</button>
+          <button type="button" id="applyFiltersBtn" class="btn btn--primary btn--redfill">Найти</button>
         </div>
       </div>
       <div class="catalog__grid" id="carsGrid"></div>
       <div class="catalog-empty" id="carsEmpty" style="display:none;">
         <p>Похожих вариантов пока нет в примерах — оставьте заявку, мы подберём индивидуально.</p>
-        <div class="center-cta"><button class="btn btn--primary" data-open-modal>Оставить заявку</button></div>
+        <div class="center-cta"><button class="btn btn--primary btn--redfill" data-open-modal>Оставить заявку</button></div>
       </div>
     </div>
   </section>
@@ -935,11 +937,10 @@ window.ZAVOZ_CARS = [
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------- Contact links (placeholders until real links are provided) ----------
+  // ---------- Contact links ----------
   var contactLinks = {
-    tgContactLink: "https://t.me/your_zavoz_username",
-    waContactLink: "https://wa.me/70000000000",
-    igContactLink: "https://instagram.com/your_zavoz_username"
+    tgContactLink: "https://t.me/zavoz888"
+    // igContactLink intentionally left unset — Instagram is "coming soon" (see HTML button label)
   };
   Object.keys(contactLinks).forEach(function (id) {
     var el = document.getElementById(id);

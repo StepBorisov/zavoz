@@ -26,8 +26,8 @@ html{ color-scheme: light; overflow-x:hidden; }
   --ink:     #17181A;
   --gray:    #6E7178;
   --line:    #E2E2DC;
-  --accent:  #8B1A1A;
-  --accent-dark: #6B1414;
+  --accent:  #E31E24;
+  --accent-dark: #B4141A;
 
   --f-display: 'Manrope', sans-serif;
   --f-body:    'Inter', sans-serif;
@@ -97,6 +97,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .btn--ghost:hover{ border-color:var(--ink); }
 .btn--accent{ background:transparent; color:var(--accent-dark); border-color:var(--accent); }
 .btn--accent:hover{ background:var(--accent); color:#fff; }
+.btn--redfill{ background:var(--accent); color:#fff; }
+.btn--redfill:hover{ background:var(--accent-dark); }
+.btn--ghost-red{ background:transparent; color:var(--ink); border-color:var(--accent); }
+.btn--ghost-red:hover{ border-color:var(--accent-dark); }
 .btn--full{ width:100%; }
 
 /* ==========================================================================
@@ -138,7 +142,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero{ padding:var(--s-24) 0 var(--s-40); }
 .hero .container{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s-64); align-items:start; }
 .hero__eyebrow{ margin-bottom:var(--s-16); }
-.hero h1{ max-width:13ch; }
+.hero h1{ max-width:13ch; color:var(--accent); }
 .hero__sub{ margin-top:var(--s-16); max-width:40ch; font-size:16px; }
 .hero__tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--s-24); }
 .hero__tags .tag{ background:var(--panel); }
@@ -208,7 +212,8 @@ section + section{ border-top:1px solid var(--line); }
    Directions
    ========================================================================== */
 .directions__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-16); }
-.direction-card{ padding:var(--s-24); }
+.direction-card{ padding:var(--s-24); border-color:var(--accent); }
+#formWrap h3{ color:var(--accent); }
 .direction-card__code{ font-family:var(--f-mono); font-size:11px; color:var(--accent-dark); }
 .direction-card h3{ margin-top:var(--s-8); }
 .direction-card p{ margin-top:8px; font-size:14px; }
@@ -554,8 +559,8 @@ section + section{ border-top:1px solid var(--line); }
       <div class="section-head"><h2 class="reveal">Примеры автомобилей</h2></div>
       <div class="catalog__grid" id="catalogPreview"></div>
       <div class="catalog__footer">
-        <a href="cars.html" class="btn btn--ghost">Посмотреть все</a>
-        <button class="btn btn--primary" data-open-modal>Оставить заявку</button>
+        <a href="cars.html" class="btn btn--ghost btn--ghost-red">Посмотреть все</a>
+        <button class="btn btn--primary btn--redfill" data-open-modal>Оставить заявку</button>
       </div>
     </div>
   </section>
@@ -594,12 +599,11 @@ section + section{ border-top:1px solid var(--line); }
           <span class="label">Контакты</span>
           <h2 style="margin-top:12px;">Ещё не определились с автомобилем?</h2>
           <p style="margin-top:12px;">Напишите — поможем выбрать направление и рассчитаем стоимость с доставкой.</p>
-          <a href="#requestPanel" class="btn btn--primary" style="margin-top:var(--s-24);" data-open-modal>Оставить заявку</a>
+          <a href="#requestPanel" class="btn btn--primary btn--redfill" style="margin-top:var(--s-24);" data-open-modal>Оставить заявку</a>
         </div>
         <div class="contact-channels">
           <div class="contact-channel"><span class="contact-channel__name">Telegram</span><a class="btn btn--ghost btn--sm" href="#" id="tgContactLink">Написать</a></div>
-          <div class="contact-channel"><span class="contact-channel__name">WhatsApp</span><a class="btn btn--ghost btn--sm" href="#" id="waContactLink">Написать</a></div>
-          <div class="contact-channel"><span class="contact-channel__name">Instagram</span><a class="btn btn--ghost btn--sm" href="#" id="igContactLink">Открыть</a></div>
+          <div class="contact-channel"><span class="contact-channel__name">Instagram</span><a class="btn btn--ghost btn--sm" href="#" id="igContactLink" aria-disabled="true">Скоро</a></div>
         </div>
       </div>
     </div>
@@ -986,11 +990,10 @@ window.ZAVOZ_CARS = [
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---------- Contact links (placeholders until real links are provided) ----------
+  // ---------- Contact links ----------
   var contactLinks = {
-    tgContactLink: "https://t.me/your_zavoz_username",
-    waContactLink: "https://wa.me/70000000000",
-    igContactLink: "https://instagram.com/your_zavoz_username"
+    tgContactLink: "https://t.me/zavoz888"
+    // igContactLink intentionally left unset — Instagram is "coming soon" (see HTML button label)
   };
   Object.keys(contactLinks).forEach(function (id) {
     var el = document.getElementById(id);
