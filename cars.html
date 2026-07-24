@@ -92,10 +92,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .btn--primary:disabled{ background:var(--line); color:var(--gray); cursor:not-allowed; }
 .btn--ghost{ background:transparent; color:var(--ink); border-color:var(--line); }
 .btn--ghost:hover{ border-color:var(--ink); }
-.btn--accent{ background:var(--accent); color:#20180A; }
-.btn--accent:hover{ background:var(--accent-dark); color:#fff; }
-.btn--accent-outline{ background:transparent; color:var(--accent-dark); border-color:var(--accent); }
-.btn--accent-outline:hover{ background:var(--accent); color:#20180A; }
+.btn--accent{ background:transparent; color:var(--accent-dark); border-color:var(--accent); }
+.btn--accent:hover{ background:var(--accent); color:#20180A; }
 .btn--full{ width:100%; }
 
 /* ==========================================================================
@@ -190,6 +188,7 @@ section{ padding:var(--s-64) 0; }
 section + section{ border-top:1px solid var(--line); }
 .section--tint{ background:var(--panel); }
 .section-head{ margin-bottom:var(--s-40); }
+.section-head h2{ color:var(--accent-dark); }
 .section-head p{ max-width:44ch; margin-top:8px; }
 @media (max-width:767px){ section{ padding:var(--s-40) 0; } }
 
@@ -198,7 +197,7 @@ section + section{ border-top:1px solid var(--line); }
    ========================================================================== */
 .trust__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-16); }
 .trust__item{ padding:var(--s-16) 0; border-top:1px solid var(--line); }
-.trust__item .label{ display:block; margin-bottom:8px; }
+.trust__item .label{ display:block; margin-bottom:8px; color:var(--accent-dark); }
 @media (max-width:1023px){ .trust__grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:767px){ .trust__grid{ grid-template-columns:1fr; } }
 
@@ -646,46 +645,6 @@ window.ZAVOZ_CARS = [
     description: "Audi A3L Limousine 35 TFSI Fashion Sport, рынок Китая. Цвет зелёный, двигатель 1.4T, 150 л.с. Бесключевой доступ, круговой обзор 360°, адаптивный круиз-контроль, система контроля полосы движения, кожаный салон с электроприводом и подогревом передних сидений. Оригинальная краска по всему кузову, состояние практически нового автомобиля. Дата выпуска — апрель 2023, пробег 20 000 км."
   },
   {
-    id: "jp-roadster-2016",
-    brand: "Mazda",
-    model: "Roadster S Special Package",
-    year: 2016,
-    engine: "1.5 л, 132 л.с.",
-    mileage: 71000,
-    country: "japan",
-    price: 1450000,
-    images: [
-      "images/cars/mazda-roadster-2016-01.jpg",
-      "images/cars/mazda-roadster-2016-02.jpg",
-      "images/cars/mazda-roadster-2016-03.jpg",
-      "images/cars/mazda-roadster-2016-04.jpg",
-      "images/cars/mazda-roadster-2016-05.jpg",
-      "images/cars/mazda-roadster-2016-06.jpg",
-      "images/cars/mazda-roadster-2016-07.jpg",
-      "images/cars/mazda-roadster-2016-08.jpg"
-    ],
-    description: "Mazda Roadster (ND5RC), S Special Package, рынок Японии. Двигатель 1.5, 132 л.с. Пробег 71 000 км, аукционная оценка 4. Автомобиль доступен к покупке."
-  },
-  {
-    id: "jp-318i-touring-2022",
-    brand: "BMW",
-    model: "3 Series 318i Touring M Sport (G21)",
-    year: 2022,
-    engine: "2.0 л, 156 л.с.",
-    mileage: 37000,
-    country: "japan",
-    price: 2460000,
-    images: [
-      "images/cars/bmw-318i-touring-2022-01.jpg",
-      "images/cars/bmw-318i-touring-2022-02.jpg",
-      "images/cars/bmw-318i-touring-2022-03.jpg",
-      "images/cars/bmw-318i-touring-2022-04.jpg",
-      "images/cars/bmw-318i-touring-2022-05.jpg",
-      "images/cars/bmw-318i-touring-2022-06.jpg"
-    ],
-    description: "BMW 3 Series 318i Touring M Sport (G21), рынок Японии. Двигатель 2.0, 156 л.с. Дата выпуска — декабрь 2022, пробег 37 000 км, аукционная оценка 4.5. Автомобиль доступен к покупке."
-  },
-  {
     id: "kr-x4-2021",
     brand: "BMW",
     model: "X4 xDrive20i M Sport X",
@@ -729,6 +688,46 @@ window.ZAVOZ_CARS = [
       "images/cars/bmw-5series-2023-10.jpg"
     ],
     description: "BMW 5 Series M-Sport, рынок Кореи. Двигатель 2.0, 190 л.с., бензин. Пробег 30 000 км. Автомобиль доступен к покупке."
+  },
+  {
+    id: "jp-roadster-2016",
+    brand: "Mazda",
+    model: "Roadster S Special Package",
+    year: 2016,
+    engine: "1.5 л, 132 л.с.",
+    mileage: 71000,
+    country: "japan",
+    price: 1450000,
+    images: [
+      "images/cars/mazda-roadster-2016-01.jpg",
+      "images/cars/mazda-roadster-2016-02.jpg",
+      "images/cars/mazda-roadster-2016-03.jpg",
+      "images/cars/mazda-roadster-2016-04.jpg",
+      "images/cars/mazda-roadster-2016-05.jpg",
+      "images/cars/mazda-roadster-2016-06.jpg",
+      "images/cars/mazda-roadster-2016-07.jpg",
+      "images/cars/mazda-roadster-2016-08.jpg"
+    ],
+    description: "Mazda Roadster (ND5RC), S Special Package, рынок Японии. Двигатель 1.5, 132 л.с. Пробег 71 000 км, аукционная оценка 4. Автомобиль доступен к покупке."
+  },
+  {
+    id: "jp-318i-touring-2022",
+    brand: "BMW",
+    model: "3 Series 318i Touring M Sport (G21)",
+    year: 2022,
+    engine: "2.0 л, 156 л.с.",
+    mileage: 37000,
+    country: "japan",
+    price: 2460000,
+    images: [
+      "images/cars/bmw-318i-touring-2022-01.jpg",
+      "images/cars/bmw-318i-touring-2022-02.jpg",
+      "images/cars/bmw-318i-touring-2022-03.jpg",
+      "images/cars/bmw-318i-touring-2022-04.jpg",
+      "images/cars/bmw-318i-touring-2022-05.jpg",
+      "images/cars/bmw-318i-touring-2022-06.jpg"
+    ],
+    description: "BMW 3 Series 318i Touring M Sport (G21), рынок Японии. Двигатель 2.0, 156 л.с. Дата выпуска — декабрь 2022, пробег 37 000 км, аукционная оценка 4.5. Автомобиль доступен к покупке."
   },
   {
     id: "cn-audi-q3-2022",
@@ -780,7 +779,8 @@ window.ZAVOZ_CARS = [
       "images/cars/honda-xrv-2022-15.jpg",
       "images/cars/honda-xrv-2022-16.jpg",
       "images/cars/honda-xrv-2022-17.jpg",
-      "images/cars/honda-xrv-2022-18.jpg"
+      "images/cars/honda-xrv-2022-18.jpg",
+      "images/cars/honda-xrv-2022-19.jpg"
     ],
     description: "Dongfeng Honda, рынок Китая. Комплектация Comfort, привод 2WD, вариатор CVT. Цвет чёрный, оригинальная краска. Дата выпуска — февраль 2022, пробег 57 087 км. Автомобиль доступен к покупке."
   },
@@ -1117,7 +1117,7 @@ window.ZAVOZ_CARS = [
         "</div>" +
         '<div class="car-card__price">от ' + car.price.toLocaleString("ru-RU") + " ₽</div>" +
         '<div class="car-card__price-note">Владивосток · под ключ</div>' +
-        '<button class="btn btn--accent-outline btn--full" data-open-modal data-prefill=\'{"brand":"' + car.brand + " " + car.model + '","country":"' + car.country + '"}\'>Получить расчёт</button>' +
+        '<button class="btn btn--accent btn--full" data-open-modal data-prefill=\'{"brand":"' + car.brand + " " + car.model + '","country":"' + car.country + '"}\'>Получить расчёт</button>' +
       "</div>";
     var galleryEl = card.querySelector(".car-gallery-wrap");
     galleryEl.addEventListener("click", function () { openCarModal(car); });
