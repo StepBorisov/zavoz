@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<script>window.ZAVOZ_API_BASE = "https://zavoz-backend.onrender.com";</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
@@ -150,7 +151,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero__sub{ margin-top:var(--s-16); max-width:40ch; font-size:16px; }
 .hero__tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:var(--s-24); }
 .hero__tags .tag{ background:var(--panel); }
-.hero__link{ margin-top:var(--s-24); display:inline-block; font-size:14px; border-bottom:1px solid var(--line); }
+.hero__link{ margin-top:var(--s-24); display:inline-block; font-size:14px; color:var(--ink); border-bottom:1px solid var(--accent); }
+.hero__link-arrow{ color:var(--accent); }
 .hero__link:hover{ border-color:var(--ink); }
 
 .request-panel{ padding:var(--s-16) var(--s-24); }
@@ -411,7 +413,7 @@ section + section{ border-top:1px solid var(--line); }
           <span class="tag">Доставка по РФ</span>
           <span class="tag">Любой бюджет</span>
         </div>
-        <a href="cars.html" class="hero__link">Смотреть примеры автомобилей →</a>
+        <a href="cars.html" class="hero__link">Смотреть примеры автомобилей <span class="hero__link-arrow">→</span></a>
       </div>
 
       <div class="request-panel panel" id="requestPanel">
